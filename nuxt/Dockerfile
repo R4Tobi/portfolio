@@ -5,11 +5,10 @@ FROM node:22-alpine
 WORKDIR /app
 
 COPY ./src/ .
-RUN rm -R node_modules
+RUN rm -R node_modules || true
 RUN find . -type f -exec dos2unix {} \;
 RUN find . -type f -exec sed -i 's/\r//g' {} +
 
-# RUN rm -R node_modules
 
 RUN npm install
 
