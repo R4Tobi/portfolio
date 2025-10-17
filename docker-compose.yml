@@ -1,0 +1,8 @@
+services:
+  frontend:
+    build: 
+      context: ./nuxt/
+    hostname: "frontend"
+    ports:
+      - 81:80
+    restart: always
